@@ -10,6 +10,7 @@ part 'get_all_restaurant_bloc.freezed.dart';
 class GetAllRestaurantBloc
     extends Bloc<GetAllRestaurantEvent, GetAllRestaurantState> {
   final RestaurantDataSources dataSources;
+
   GetAllRestaurantBloc(this.dataSources) : super(const _Initial()) {
     on<_GetAllRestaurant>(_getAllRestaurant);
   }
