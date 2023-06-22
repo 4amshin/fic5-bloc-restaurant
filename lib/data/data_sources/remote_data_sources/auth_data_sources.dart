@@ -29,7 +29,7 @@ class AuthDataSource {
   Future<Either<String, AuthResponseModel>> login({
     required LoginRequestModel loginData,
   }) async {
-    const baseUrl = "${Constants.baseUrl}/api/auth/local";
+    const baseUrl = "${Constants.baseUrl}api/auth/local";
     final response = await http.post(
       Uri.parse(baseUrl),
       headers: {'Content-type': 'application/json; charset=UTF-8'},

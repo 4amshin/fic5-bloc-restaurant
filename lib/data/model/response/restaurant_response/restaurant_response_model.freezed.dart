@@ -21,7 +21,7 @@ RestaurantResponseModel _$RestaurantResponseModelFromJson(
 
 /// @nodoc
 mixin _$RestaurantResponseModel {
-  List<Restaurant> get data => throw _privateConstructorUsedError;
+  List<Restaurant> get restaurant => throw _privateConstructorUsedError;
   Meta get meta => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $RestaurantResponseModelCopyWith<$Res> {
           $Res Function(RestaurantResponseModel) then) =
       _$RestaurantResponseModelCopyWithImpl<$Res, RestaurantResponseModel>;
   @useResult
-  $Res call({List<Restaurant> data, Meta meta});
+  $Res call({List<Restaurant> restaurant, Meta meta});
 
   $MetaCopyWith<$Res> get meta;
 }
@@ -55,13 +55,13 @@ class _$RestaurantResponseModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? restaurant = null,
     Object? meta = null,
   }) {
     return _then(_value.copyWith(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
+      restaurant: null == restaurant
+          ? _value.restaurant
+          : restaurant // ignore: cast_nullable_to_non_nullable
               as List<Restaurant>,
       meta: null == meta
           ? _value.meta
@@ -87,7 +87,7 @@ abstract class _$$_RestaurantResponseModelCopyWith<$Res>
       __$$_RestaurantResponseModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Restaurant> data, Meta meta});
+  $Res call({List<Restaurant> restaurant, Meta meta});
 
   @override
   $MetaCopyWith<$Res> get meta;
@@ -105,13 +105,13 @@ class __$$_RestaurantResponseModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? restaurant = null,
     Object? meta = null,
   }) {
     return _then(_$_RestaurantResponseModel(
-      data: null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
+      restaurant: null == restaurant
+          ? _value._restaurant
+          : restaurant // ignore: cast_nullable_to_non_nullable
               as List<Restaurant>,
       meta: null == meta
           ? _value.meta
@@ -125,18 +125,18 @@ class __$$_RestaurantResponseModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RestaurantResponseModel implements _RestaurantResponseModel {
   const _$_RestaurantResponseModel(
-      {required final List<Restaurant> data, required this.meta})
-      : _data = data;
+      {required final List<Restaurant> restaurant, required this.meta})
+      : _restaurant = restaurant;
 
   factory _$_RestaurantResponseModel.fromJson(Map<String, dynamic> json) =>
       _$$_RestaurantResponseModelFromJson(json);
 
-  final List<Restaurant> _data;
+  final List<Restaurant> _restaurant;
   @override
-  List<Restaurant> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
+  List<Restaurant> get restaurant {
+    if (_restaurant is EqualUnmodifiableListView) return _restaurant;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
+    return EqualUnmodifiableListView(_restaurant);
   }
 
   @override
@@ -144,7 +144,7 @@ class _$_RestaurantResponseModel implements _RestaurantResponseModel {
 
   @override
   String toString() {
-    return 'RestaurantResponseModel(data: $data, meta: $meta)';
+    return 'RestaurantResponseModel(restaurant: $restaurant, meta: $meta)';
   }
 
   @override
@@ -152,14 +152,15 @@ class _$_RestaurantResponseModel implements _RestaurantResponseModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RestaurantResponseModel &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality()
+                .equals(other._restaurant, _restaurant) &&
             (identical(other.meta, meta) || other.meta == meta));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_data), meta);
+      runtimeType, const DeepCollectionEquality().hash(_restaurant), meta);
 
   @JsonKey(ignore: true)
   @override
@@ -179,14 +180,14 @@ class _$_RestaurantResponseModel implements _RestaurantResponseModel {
 
 abstract class _RestaurantResponseModel implements RestaurantResponseModel {
   const factory _RestaurantResponseModel(
-      {required final List<Restaurant> data,
+      {required final List<Restaurant> restaurant,
       required final Meta meta}) = _$_RestaurantResponseModel;
 
   factory _RestaurantResponseModel.fromJson(Map<String, dynamic> json) =
       _$_RestaurantResponseModel.fromJson;
 
   @override
-  List<Restaurant> get data;
+  List<Restaurant> get restaurant;
   @override
   Meta get meta;
   @override
