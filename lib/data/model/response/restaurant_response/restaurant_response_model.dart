@@ -6,7 +6,7 @@ part 'restaurant_response_model.g.dart';
 @freezed
 class RestaurantResponseModel with _$RestaurantResponseModel {
   const factory RestaurantResponseModel({
-    required List<Restaurant> restaurant,
+    required List<Restaurant> data,
     required Meta meta,
   }) = _RestaurantResponseModel;
 
