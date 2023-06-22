@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'package:fic5_bloc_restaurant/data/model/response/restaurant_response/restaurant_response_model.dart';
@@ -13,6 +15,7 @@ class HmGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("Data Length: ${model.data.length}");
     return GridView.builder(
       physics: const BouncingScrollPhysics(),
       itemCount: model.data.length,

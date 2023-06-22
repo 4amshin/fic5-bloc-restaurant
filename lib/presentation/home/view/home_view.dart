@@ -1,6 +1,6 @@
 import 'package:fic5_bloc_restaurant/bloc/restaurant/get_all_restaurant/get_all_restaurant_bloc.dart';
 import 'package:fic5_bloc_restaurant/presentation/home/widget/hm_grid_view.dart';
-import 'package:fic5_bloc_restaurant/presentation/home/widget/hm_logout_button.dart';
+import 'package:fic5_bloc_restaurant/presentation/home/widget/hm_profile_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +27,7 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Home View"),
-        actions: const [HmLogoutButton()],
+        actions: const [HmProfileButton()],
       ),
       body: SafeArea(
         minimum: const EdgeInsets.symmetric(horizontal: 15),

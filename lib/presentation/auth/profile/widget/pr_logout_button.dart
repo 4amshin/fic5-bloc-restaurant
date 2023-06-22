@@ -5,8 +5,8 @@ import 'package:fic5_bloc_restaurant/presentation/auth/login/view/login_view.dar
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HmLogoutButton extends StatelessWidget {
-  const HmLogoutButton({Key? key}) : super(key: key);
+class PrLogoutButton extends StatelessWidget {
+  const PrLogoutButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
