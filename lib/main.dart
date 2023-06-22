@@ -2,6 +2,7 @@ import 'package:fic5_bloc_restaurant/data/data_sources/local_data_sources/auth_l
 import 'package:fic5_bloc_restaurant/presentation/auth/login/view/login_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/auth/profile/view/profile_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/auth/register/view/register_view.dart';
+import 'package:fic5_bloc_restaurant/presentation/detail/view/detail_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/home/view/home_view.dart';
 import 'package:fic5_bloc_restaurant/shared/provider.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,15 @@ class MyApp extends StatelessWidget {
             GoRoute(
               path: ProfileView.routeName,
               builder: (context, state) => const ProfileView(),
+            ),
+            GoRoute(
+              path: "${DetailView.routeName}/:restaurantId",
+              builder: (context, state) {
+                return DetailView(
+                  restaurantId:
+                      int.parse(state.pathParameters["restaurantId"] ?? ''),
+                );
+              },
             ),
             GoRoute(
               path: HomeView.routeName,

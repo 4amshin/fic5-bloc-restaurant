@@ -3,6 +3,7 @@ import 'package:fic5_bloc_restaurant/bloc/auth/login/login_bloc.dart';
 import 'package:fic5_bloc_restaurant/bloc/auth/register/register_bloc.dart';
 import 'package:fic5_bloc_restaurant/bloc/restaurant/add_restaurant/add_restaurant_bloc.dart';
 import 'package:fic5_bloc_restaurant/bloc/restaurant/get_all_restaurant/get_all_restaurant_bloc.dart';
+import 'package:fic5_bloc_restaurant/bloc/restaurant/get_restaurant_detail/get_restaurant_detail_bloc.dart';
 import 'package:fic5_bloc_restaurant/data/data_sources/remote_data_sources/auth_data_sources.dart';
 import 'package:fic5_bloc_restaurant/data/data_sources/remote_data_sources/restaurant_data_sources.dart';
 import 'package:fic5_bloc_restaurant/shared/widgets/InputField/password_field/cubit/password_visibility_cubit.dart';
@@ -31,6 +32,9 @@ class SimpleBlocProvider extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => GetAllRestaurantBloc(RestaurantDataSources()),
+        ),
+        BlocProvider(
+          create: (context) => GetRestaurantDetailBloc(RestaurantDataSources()),
         ),
         BlocProvider(
           create: (context) => AddRestaurantBloc(RestaurantDataSources()),
