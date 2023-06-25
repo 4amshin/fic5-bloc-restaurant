@@ -23,23 +23,49 @@ class DvMapView extends StatefulWidget {
 }
 
 class _DvMapViewState extends State<DvMapView> {
-  late GoogleMapController mapController;
-  // final LatLng _palopo = const LatLng(-3.0068907878258972, 120.20167831747938);
+  final Set<Marker> markers = {};
 
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
+  void createMarker(double lat, double lng, String address) {
+    final marker = Marker(
+      markerId: const MarkerId('currentPosition'),
+      infoWindow: InfoWindow(title: address),
+      position: LatLng(lat, lng),
+    );
+
+    markers.add(marker);
+  }
+
+  @override
+  void initState() {
+    createMarker(
+      double.parse(widget.latitude),
+      double.parse(widget.longitude),
+      widget.cafeName,
+    );
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SizedBox(
+        Container(
           height: 250,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.3),
+                  offset: const Offset(5, 10),
+                  blurRadius: 10,
+                )
+              ]),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(25),
             child: GoogleMap(
-              onMapCreated: _onMapCreated,
+              // onMapCreated: _onMapCreated,
+              mapType: MapType.normal,
+              markers: markers,
               initialCameraPosition: CameraPosition(
                 target: LatLng(
                   double.parse(widget.latitude),
