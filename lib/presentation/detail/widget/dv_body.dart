@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:fic5_bloc_restaurant/presentation/detail/widget/dv_map_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,8 +33,8 @@ class DvBody extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 15,
-          left: 10,
+          top: 40,
+          left: 15,
           child: CircleAvatar(
             backgroundColor: Colors.white,
             child: IconButton(
@@ -88,6 +89,14 @@ class DvBody extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 15.0,
                   ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                DvMapView(
+                  cafeName: data.name,
+                  latitude: data.latitude,
+                  longitude: data.longitude,
                 ),
               ],
             ),

@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'presentation/detail/widget/dv_map_full_view.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -39,6 +41,18 @@ class MyApp extends StatelessWidget {
               builder: (context, state) => const RegisterView(),
             ),
             GoRoute(
+              path: HomeView.routeName,
+              builder: (context, state) => const HomeView(),
+              redirect: (context, state) async {
+                final isLogin = await AuthLocalDataSources().isLogin();
+                if (isLogin) {
+                  return null;
+                } else {
+                  return LoginView.routeName;
+                }
+              },
+            ),
+            GoRoute(
               path: ProfileView.routeName,
               builder: (context, state) => const ProfileView(),
             ),
@@ -52,15 +66,13 @@ class MyApp extends StatelessWidget {
               },
             ),
             GoRoute(
-              path: HomeView.routeName,
-              builder: (context, state) => const HomeView(),
-              redirect: (context, state) async {
-                final isLogin = await AuthLocalDataSources().isLogin();
-                if (isLogin) {
-                  return null;
-                } else {
-                  return LoginView.routeName;
-                }
+              path: "${DvMapFullView.routeName}/:locName/:latitude/:longitude",
+              builder: (context, state) {
+                return DvMapFullView(
+                  title: state.pathParameters["locName"] ?? '',
+                  latitude: state.pathParameters["latitude"] ?? '',
+                  longitude: state.pathParameters["longitude"] ?? '',
+                );
               },
             ),
           ],
