@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:fic5_bloc_restaurant/bloc/auth/login/login_bloc.dart';
+import 'package:fic5_bloc_restaurant/bloc/auth/profile/profile_bloc.dart';
 import 'package:fic5_bloc_restaurant/bloc/auth/register/register_bloc.dart';
 import 'package:fic5_bloc_restaurant/bloc/restaurant/add_restaurant/add_restaurant_bloc.dart';
 import 'package:fic5_bloc_restaurant/bloc/restaurant/delete_restaurant/delete_restaurant_bloc.dart';
@@ -42,6 +43,9 @@ class SimpleBlocProvider extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => DeleteRestaurantBloc(RestaurantDataSources()),
+        ),
+        BlocProvider(
+          create: (context) => ProfileBloc(AuthDataSource()),
         ),
       ],
       child: child,

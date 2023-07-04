@@ -13,10 +13,12 @@ import 'package:fic5_bloc_restaurant/presentation/detail/widget/dv_map_view.dart
 class DvBody extends StatelessWidget {
   final RestaurantDetailResponseModel model;
   final int restaurantId;
+  final bool isLogin;
   const DvBody({
     Key? key,
     required this.model,
     required this.restaurantId,
+    this.isLogin = false,
   }) : super(key: key);
 
   @override
@@ -109,74 +111,80 @@ class DvBody extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        DvButton(
-                          onTap: () {},
-                          icon: Icons.edit,
-                          iconColor: Colors.blue,
-                        ),
-                        BlocConsumer<DeleteRestaurantBloc,
-                            DeleteRestaurantState>(
-                          builder: (context, state) {
-                            return state.maybeWhen(
-                              loading: () => const Center(
-                                  child: CircularProgressIndicator()),
-                              orElse: () {
-                                return DvButton(
-                                  onTap: () => deleteBloc.add(
-                                      DeleteRestaurantEvent.deleteRestaurant(
-                                          restaurantId: restaurantId)),
-                                  icon: Icons.delete,
-                                  iconColor: Colors.red,
-                                );
-                              },
-                            );
-                          },
-                          listener: (context, state) {
-                            state.maybeWhen(
-                              loaded: (deleteModel) {
-                                //show success dialog
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text(
-                                      "Delete Success",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    backgroundColor: Colors.greenAccent,
-                                  ),
-                                );
-                                //navigate to home page
-                                context.go(MainNavigationView.routeName);
-                                context.read<GetAllRestaurantBloc>().add(
-                                    const GetAllRestaurantEvent
-                                        .getAllRestaurant());
-                              },
-                              error: (message) {
-                                //show error dialog
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      message,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    backgroundColor: Colors.redAccent,
-                                  ),
-                                );
-                              },
-                              orElse: () {},
-                            );
-                          },
-                        ),
-                      ],
-                    ),
+                    isLogin
+                        ? Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              DvButton(
+                                onTap: () {},
+                                icon: Icons.edit,
+                                iconColor: Colors.blue,
+                              ),
+                              BlocConsumer<DeleteRestaurantBloc,
+                                  DeleteRestaurantState>(
+                                builder: (context, state) {
+                                  return state.maybeWhen(
+                                    loading: () => const Center(
+                                        child: CircularProgressIndicator()),
+                                    orElse: () {
+                                      return DvButton(
+                                        onTap: () => deleteBloc.add(
+                                            DeleteRestaurantEvent
+                                                .deleteRestaurant(
+                                                    restaurantId:
+                                                        restaurantId)),
+                                        icon: Icons.delete,
+                                        iconColor: Colors.red,
+                                      );
+                                    },
+                                  );
+                                },
+                                listener: (context, state) {
+                                  state.maybeWhen(
+                                    loaded: (deleteModel) {
+                                      //show success dialog
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content: Text(
+                                            "Delete Success",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          backgroundColor: Colors.greenAccent,
+                                        ),
+                                      );
+                                      //navigate to home page
+                                      context.go(MainNavigationView.routeName);
+                                      context.read<GetAllRestaurantBloc>().add(
+                                          const GetAllRestaurantEvent
+                                              .getAllRestaurant());
+                                    },
+                                    error: (message) {
+                                      //show error dialog
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            message,
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          backgroundColor: Colors.redAccent,
+                                        ),
+                                      );
+                                    },
+                                    orElse: () {},
+                                  );
+                                },
+                              ),
+                            ],
+                          )
+                        : const SizedBox.shrink(),
                   ],
                 ),
                 const SizedBox(

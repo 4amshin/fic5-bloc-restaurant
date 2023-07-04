@@ -1,4 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:developer';
+
+import 'package:fic5_bloc_restaurant/data/data_sources/local_data_sources/auth_local_data_sources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,11 +21,22 @@ class DetailView extends StatefulWidget {
 }
 
 class _DetailViewState extends State<DetailView> {
+  late Future<bool> _isUserLogin;
+
   @override
   void initState() {
+    _fetchUserData();
     context.read<GetRestaurantDetailBloc>().add(
         GetRestaurantDetailEvent.getDetail(restaurantId: widget.restaurantId));
     super.initState();
+  }
+
+  Future<void> _fetchUserData() async {
+    _isUserLogin = AuthLocalDataSources().isLogin();
+    if (await _isUserLogin == true) {
+      final localData = await AuthLocalDataSources().getUser();
+      log("User Id: ${localData.user.id}");
+    }
   }
 
   @override
@@ -33,9 +47,20 @@ class _DetailViewState extends State<DetailView> {
           return state.maybeWhen(
             loading: () => const Center(child: CircularProgressIndicator()),
             loaded: (model) {
-              return DvBody(
-                model: model,
-                restaurantId: widget.restaurantId,
+              return FutureBuilder<bool>(
+                future: _isUserLogin,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else {
+                    final isUserLogin = snapshot.data ?? false;
+                    return DvBody(
+                      isLogin: isUserLogin,
+                      model: model,
+                      restaurantId: widget.restaurantId,
+                    );
+                  }
+                },
               );
             },
             orElse: () => const Center(
