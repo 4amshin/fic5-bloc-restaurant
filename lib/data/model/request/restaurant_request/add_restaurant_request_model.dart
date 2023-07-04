@@ -20,7 +20,7 @@ class Data with _$Data {
     required String description,
     required String latitude,
     required String longitude,
-    required String photo,
+    String? photo,
     required String address,
     required int userId,
   }) = _Data;

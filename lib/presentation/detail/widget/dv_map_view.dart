@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:fic5_bloc_restaurant/shared/theme/google_map/gmaap_marker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -23,18 +24,6 @@ class DvMapView extends StatefulWidget {
 }
 
 class _DvMapViewState extends State<DvMapView> {
-  final Set<Marker> markers = {};
-
-  void createMarker(double lat, double lng, String address) {
-    final marker = Marker(
-      markerId: const MarkerId('currentPosition'),
-      infoWindow: InfoWindow(title: address),
-      position: LatLng(lat, lng),
-    );
-
-    markers.add(marker);
-  }
-
   @override
   void initState() {
     createMarker(
@@ -55,9 +44,10 @@ class _DvMapViewState extends State<DvMapView> {
               borderRadius: BorderRadius.circular(25),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  offset: const Offset(5, 10),
+                  color: Colors.grey.withOpacity(0.2),
+                  offset: const Offset(2, 0),
                   blurRadius: 10,
+                  spreadRadius: 5,
                 )
               ]),
           child: ClipRRect(

@@ -1,28 +1,27 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'add_restaurant_response_model.freezed.dart';
-part 'add_restaurant_response_model.g.dart';
+part 'delete_restaurant_response_model.freezed.dart';
+part 'delete_restaurant_response_model.g.dart';
 
 @freezed
-class AddRestaurantResponseModel with _$AddRestaurantResponseModel {
-  const factory AddRestaurantResponseModel({
-    required Restaurant restaurant,
+class DeleteRestaurantResponseModel with _$DeleteRestaurantResponseModel {
+  const factory DeleteRestaurantResponseModel({
+    required Data data,
     required Meta meta,
-  }) = _AddRestaurantResponseModel;
+  }) = _DeleteRestaurantResponseModel;
 
-  factory AddRestaurantResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$AddRestaurantResponseModelFromJson(json);
+  factory DeleteRestaurantResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$DeleteRestaurantResponseModelFromJson(json);
 }
 
 @freezed
-class Restaurant with _$Restaurant {
-  const factory Restaurant({
+class Data with _$Data {
+  const factory Data({
     required int id,
     required Attributes attributes,
-  }) = _Restaurant;
+  }) = _Data;
 
-  factory Restaurant.fromJson(Map<String, dynamic> json) =>
-      _$RestaurantFromJson(json);
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 }
 
 @freezed
@@ -37,7 +36,7 @@ class Attributes with _$Attributes {
     required DateTime updatedAt,
     required DateTime publishedAt,
     String? photo,
-    required String userId,
+    String? userId,
   }) = _Attributes;
 
   factory Attributes.fromJson(Map<String, dynamic> json) =>

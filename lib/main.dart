@@ -1,9 +1,11 @@
 import 'package:fic5_bloc_restaurant/data/data_sources/local_data_sources/auth_local_data_sources.dart';
+import 'package:fic5_bloc_restaurant/presentation/add_restaurant/view/add_restaurant_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/auth/login/view/login_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/auth/profile/view/profile_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/auth/register/view/register_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/detail/view/detail_view.dart';
 import 'package:fic5_bloc_restaurant/presentation/home/view/home_view.dart';
+import 'package:fic5_bloc_restaurant/presentation/main_navigation/view/main_navigation_view.dart';
 import 'package:fic5_bloc_restaurant/shared/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -30,11 +32,16 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routerConfig: GoRouter(
-          initialLocation: HomeView.routeName,
+          initialLocation: MainNavigationView.routeName,
+          // initialLocation: HomeView.routeName,
           routes: [
             GoRoute(
               path: LoginView.routeName,
               builder: (context, state) => const LoginView(),
+            ),
+            GoRoute(
+              path: MainNavigationView.routeName,
+              builder: (context, state) => const MainNavigationView(),
             ),
             GoRoute(
               path: RegisterView.routeName,
@@ -48,7 +55,7 @@ class MyApp extends StatelessWidget {
                 if (isLogin) {
                   return null;
                 } else {
-                  return LoginView.routeName;
+                  return HomeView.routeName;
                 }
               },
             ),
@@ -74,6 +81,10 @@ class MyApp extends StatelessWidget {
                   longitude: state.pathParameters["longitude"] ?? '',
                 );
               },
+            ),
+            GoRoute(
+              path: AddRestaurantView.routeName,
+              builder: (context, state) => const AddRestaurantView(),
             ),
           ],
         ),

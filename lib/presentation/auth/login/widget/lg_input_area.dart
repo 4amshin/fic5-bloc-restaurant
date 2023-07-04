@@ -2,7 +2,7 @@ import 'package:fic5_bloc_restaurant/bloc/auth/login/login_bloc.dart';
 import 'package:fic5_bloc_restaurant/data/data_sources/local_data_sources/auth_local_data_sources.dart';
 import 'package:fic5_bloc_restaurant/data/model/request/auth_request/login_request_model.dart';
 import 'package:fic5_bloc_restaurant/presentation/auth/register/view/register_view.dart';
-import 'package:fic5_bloc_restaurant/presentation/home/view/home_view.dart';
+import 'package:fic5_bloc_restaurant/presentation/main_navigation/view/main_navigation_view.dart';
 import 'package:fic5_bloc_restaurant/shared/widgets/Buttons/main_button.dart';
 import 'package:fic5_bloc_restaurant/shared/widgets/InputField/password_field/password_input.dart';
 import 'package:fic5_bloc_restaurant/shared/widgets/InputField/text_input/text_input.dart';
@@ -73,10 +73,10 @@ class LgInputArea extends StatelessWidget {
                     ),
                   );
                   //navigate to home page
-                  context.go(HomeView.routeName);
+                  context.go(MainNavigationView.routeName);
                 },
                 error: (message) {
-                  //show success dialog
+                  //show error dialog
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
@@ -113,7 +113,7 @@ class LgInputArea extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           TextLink(
-            onTap: () => context.go(RegisterView.routeName),
+            onTap: () => context.push(RegisterView.routeName),
             label: "Belum Punya Akun? ",
             linkText: "Register",
           ),

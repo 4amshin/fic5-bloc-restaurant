@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_restaurant_response_model.dart';
+part of 'delete_restaurant_response_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,40 +14,41 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-AddRestaurantResponseModel _$AddRestaurantResponseModelFromJson(
+DeleteRestaurantResponseModel _$DeleteRestaurantResponseModelFromJson(
     Map<String, dynamic> json) {
-  return _AddRestaurantResponseModel.fromJson(json);
+  return _DeleteRestaurantResponseModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$AddRestaurantResponseModel {
-  Restaurant get restaurant => throw _privateConstructorUsedError;
+mixin _$DeleteRestaurantResponseModel {
+  Data get data => throw _privateConstructorUsedError;
   Meta get meta => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddRestaurantResponseModelCopyWith<AddRestaurantResponseModel>
+  $DeleteRestaurantResponseModelCopyWith<DeleteRestaurantResponseModel>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AddRestaurantResponseModelCopyWith<$Res> {
-  factory $AddRestaurantResponseModelCopyWith(AddRestaurantResponseModel value,
-          $Res Function(AddRestaurantResponseModel) then) =
-      _$AddRestaurantResponseModelCopyWithImpl<$Res,
-          AddRestaurantResponseModel>;
+abstract class $DeleteRestaurantResponseModelCopyWith<$Res> {
+  factory $DeleteRestaurantResponseModelCopyWith(
+          DeleteRestaurantResponseModel value,
+          $Res Function(DeleteRestaurantResponseModel) then) =
+      _$DeleteRestaurantResponseModelCopyWithImpl<$Res,
+          DeleteRestaurantResponseModel>;
   @useResult
-  $Res call({Restaurant restaurant, Meta meta});
+  $Res call({Data data, Meta meta});
 
-  $RestaurantCopyWith<$Res> get restaurant;
+  $DataCopyWith<$Res> get data;
   $MetaCopyWith<$Res> get meta;
 }
 
 /// @nodoc
-class _$AddRestaurantResponseModelCopyWithImpl<$Res,
-        $Val extends AddRestaurantResponseModel>
-    implements $AddRestaurantResponseModelCopyWith<$Res> {
-  _$AddRestaurantResponseModelCopyWithImpl(this._value, this._then);
+class _$DeleteRestaurantResponseModelCopyWithImpl<$Res,
+        $Val extends DeleteRestaurantResponseModel>
+    implements $DeleteRestaurantResponseModelCopyWith<$Res> {
+  _$DeleteRestaurantResponseModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -57,14 +58,14 @@ class _$AddRestaurantResponseModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? restaurant = null,
+    Object? data = null,
     Object? meta = null,
   }) {
     return _then(_value.copyWith(
-      restaurant: null == restaurant
-          ? _value.restaurant
-          : restaurant // ignore: cast_nullable_to_non_nullable
-              as Restaurant,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Data,
       meta: null == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -74,9 +75,9 @@ class _$AddRestaurantResponseModelCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $RestaurantCopyWith<$Res> get restaurant {
-    return $RestaurantCopyWith<$Res>(_value.restaurant, (value) {
-      return _then(_value.copyWith(restaurant: value) as $Val);
+  $DataCopyWith<$Res> get data {
+    return $DataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 
@@ -90,43 +91,43 @@ class _$AddRestaurantResponseModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AddRestaurantResponseModelCopyWith<$Res>
-    implements $AddRestaurantResponseModelCopyWith<$Res> {
-  factory _$$_AddRestaurantResponseModelCopyWith(
-          _$_AddRestaurantResponseModel value,
-          $Res Function(_$_AddRestaurantResponseModel) then) =
-      __$$_AddRestaurantResponseModelCopyWithImpl<$Res>;
+abstract class _$$_DeleteRestaurantResponseModelCopyWith<$Res>
+    implements $DeleteRestaurantResponseModelCopyWith<$Res> {
+  factory _$$_DeleteRestaurantResponseModelCopyWith(
+          _$_DeleteRestaurantResponseModel value,
+          $Res Function(_$_DeleteRestaurantResponseModel) then) =
+      __$$_DeleteRestaurantResponseModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Restaurant restaurant, Meta meta});
+  $Res call({Data data, Meta meta});
 
   @override
-  $RestaurantCopyWith<$Res> get restaurant;
+  $DataCopyWith<$Res> get data;
   @override
   $MetaCopyWith<$Res> get meta;
 }
 
 /// @nodoc
-class __$$_AddRestaurantResponseModelCopyWithImpl<$Res>
-    extends _$AddRestaurantResponseModelCopyWithImpl<$Res,
-        _$_AddRestaurantResponseModel>
-    implements _$$_AddRestaurantResponseModelCopyWith<$Res> {
-  __$$_AddRestaurantResponseModelCopyWithImpl(
-      _$_AddRestaurantResponseModel _value,
-      $Res Function(_$_AddRestaurantResponseModel) _then)
+class __$$_DeleteRestaurantResponseModelCopyWithImpl<$Res>
+    extends _$DeleteRestaurantResponseModelCopyWithImpl<$Res,
+        _$_DeleteRestaurantResponseModel>
+    implements _$$_DeleteRestaurantResponseModelCopyWith<$Res> {
+  __$$_DeleteRestaurantResponseModelCopyWithImpl(
+      _$_DeleteRestaurantResponseModel _value,
+      $Res Function(_$_DeleteRestaurantResponseModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? restaurant = null,
+    Object? data = null,
     Object? meta = null,
   }) {
-    return _then(_$_AddRestaurantResponseModel(
-      restaurant: null == restaurant
-          ? _value.restaurant
-          : restaurant // ignore: cast_nullable_to_non_nullable
-              as Restaurant,
+    return _then(_$_DeleteRestaurantResponseModel(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Data,
       meta: null == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -137,91 +138,90 @@ class __$$_AddRestaurantResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AddRestaurantResponseModel implements _AddRestaurantResponseModel {
-  const _$_AddRestaurantResponseModel(
-      {required this.restaurant, required this.meta});
+class _$_DeleteRestaurantResponseModel
+    implements _DeleteRestaurantResponseModel {
+  const _$_DeleteRestaurantResponseModel(
+      {required this.data, required this.meta});
 
-  factory _$_AddRestaurantResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_AddRestaurantResponseModelFromJson(json);
+  factory _$_DeleteRestaurantResponseModel.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_DeleteRestaurantResponseModelFromJson(json);
 
   @override
-  final Restaurant restaurant;
+  final Data data;
   @override
   final Meta meta;
 
   @override
   String toString() {
-    return 'AddRestaurantResponseModel(restaurant: $restaurant, meta: $meta)';
+    return 'DeleteRestaurantResponseModel(data: $data, meta: $meta)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddRestaurantResponseModel &&
-            (identical(other.restaurant, restaurant) ||
-                other.restaurant == restaurant) &&
+            other is _$_DeleteRestaurantResponseModel &&
+            (identical(other.data, data) || other.data == data) &&
             (identical(other.meta, meta) || other.meta == meta));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, restaurant, meta);
+  int get hashCode => Object.hash(runtimeType, data, meta);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddRestaurantResponseModelCopyWith<_$_AddRestaurantResponseModel>
-      get copyWith => __$$_AddRestaurantResponseModelCopyWithImpl<
-          _$_AddRestaurantResponseModel>(this, _$identity);
+  _$$_DeleteRestaurantResponseModelCopyWith<_$_DeleteRestaurantResponseModel>
+      get copyWith => __$$_DeleteRestaurantResponseModelCopyWithImpl<
+          _$_DeleteRestaurantResponseModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddRestaurantResponseModelToJson(
+    return _$$_DeleteRestaurantResponseModelToJson(
       this,
     );
   }
 }
 
-abstract class _AddRestaurantResponseModel
-    implements AddRestaurantResponseModel {
-  const factory _AddRestaurantResponseModel(
-      {required final Restaurant restaurant,
-      required final Meta meta}) = _$_AddRestaurantResponseModel;
+abstract class _DeleteRestaurantResponseModel
+    implements DeleteRestaurantResponseModel {
+  const factory _DeleteRestaurantResponseModel(
+      {required final Data data,
+      required final Meta meta}) = _$_DeleteRestaurantResponseModel;
 
-  factory _AddRestaurantResponseModel.fromJson(Map<String, dynamic> json) =
-      _$_AddRestaurantResponseModel.fromJson;
+  factory _DeleteRestaurantResponseModel.fromJson(Map<String, dynamic> json) =
+      _$_DeleteRestaurantResponseModel.fromJson;
 
   @override
-  Restaurant get restaurant;
+  Data get data;
   @override
   Meta get meta;
   @override
   @JsonKey(ignore: true)
-  _$$_AddRestaurantResponseModelCopyWith<_$_AddRestaurantResponseModel>
+  _$$_DeleteRestaurantResponseModelCopyWith<_$_DeleteRestaurantResponseModel>
       get copyWith => throw _privateConstructorUsedError;
 }
 
-Restaurant _$RestaurantFromJson(Map<String, dynamic> json) {
-  return _Restaurant.fromJson(json);
+Data _$DataFromJson(Map<String, dynamic> json) {
+  return _Data.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Restaurant {
+mixin _$Data {
   int get id => throw _privateConstructorUsedError;
   Attributes get attributes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RestaurantCopyWith<Restaurant> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DataCopyWith<Data> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RestaurantCopyWith<$Res> {
-  factory $RestaurantCopyWith(
-          Restaurant value, $Res Function(Restaurant) then) =
-      _$RestaurantCopyWithImpl<$Res, Restaurant>;
+abstract class $DataCopyWith<$Res> {
+  factory $DataCopyWith(Data value, $Res Function(Data) then) =
+      _$DataCopyWithImpl<$Res, Data>;
   @useResult
   $Res call({int id, Attributes attributes});
 
@@ -229,9 +229,9 @@ abstract class $RestaurantCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
-    implements $RestaurantCopyWith<$Res> {
-  _$RestaurantCopyWithImpl(this._value, this._then);
+class _$DataCopyWithImpl<$Res, $Val extends Data>
+    implements $DataCopyWith<$Res> {
+  _$DataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -266,11 +266,9 @@ class _$RestaurantCopyWithImpl<$Res, $Val extends Restaurant>
 }
 
 /// @nodoc
-abstract class _$$_RestaurantCopyWith<$Res>
-    implements $RestaurantCopyWith<$Res> {
-  factory _$$_RestaurantCopyWith(
-          _$_Restaurant value, $Res Function(_$_Restaurant) then) =
-      __$$_RestaurantCopyWithImpl<$Res>;
+abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
+  factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
+      __$$_DataCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, Attributes attributes});
@@ -280,11 +278,9 @@ abstract class _$$_RestaurantCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RestaurantCopyWithImpl<$Res>
-    extends _$RestaurantCopyWithImpl<$Res, _$_Restaurant>
-    implements _$$_RestaurantCopyWith<$Res> {
-  __$$_RestaurantCopyWithImpl(
-      _$_Restaurant _value, $Res Function(_$_Restaurant) _then)
+class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
+    implements _$$_DataCopyWith<$Res> {
+  __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -293,7 +289,7 @@ class __$$_RestaurantCopyWithImpl<$Res>
     Object? id = null,
     Object? attributes = null,
   }) {
-    return _then(_$_Restaurant(
+    return _then(_$_Data(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -308,11 +304,10 @@ class __$$_RestaurantCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Restaurant implements _Restaurant {
-  const _$_Restaurant({required this.id, required this.attributes});
+class _$_Data implements _Data {
+  const _$_Data({required this.id, required this.attributes});
 
-  factory _$_Restaurant.fromJson(Map<String, dynamic> json) =>
-      _$$_RestaurantFromJson(json);
+  factory _$_Data.fromJson(Map<String, dynamic> json) => _$$_DataFromJson(json);
 
   @override
   final int id;
@@ -321,14 +316,14 @@ class _$_Restaurant implements _Restaurant {
 
   @override
   String toString() {
-    return 'Restaurant(id: $id, attributes: $attributes)';
+    return 'Data(id: $id, attributes: $attributes)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Restaurant &&
+            other is _$_Data &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.attributes, attributes) ||
                 other.attributes == attributes));
@@ -341,24 +336,22 @@ class _$_Restaurant implements _Restaurant {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RestaurantCopyWith<_$_Restaurant> get copyWith =>
-      __$$_RestaurantCopyWithImpl<_$_Restaurant>(this, _$identity);
+  _$$_DataCopyWith<_$_Data> get copyWith =>
+      __$$_DataCopyWithImpl<_$_Data>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RestaurantToJson(
+    return _$$_DataToJson(
       this,
     );
   }
 }
 
-abstract class _Restaurant implements Restaurant {
-  const factory _Restaurant(
-      {required final int id,
-      required final Attributes attributes}) = _$_Restaurant;
+abstract class _Data implements Data {
+  const factory _Data(
+      {required final int id, required final Attributes attributes}) = _$_Data;
 
-  factory _Restaurant.fromJson(Map<String, dynamic> json) =
-      _$_Restaurant.fromJson;
+  factory _Data.fromJson(Map<String, dynamic> json) = _$_Data.fromJson;
 
   @override
   int get id;
@@ -366,8 +359,7 @@ abstract class _Restaurant implements Restaurant {
   Attributes get attributes;
   @override
   @JsonKey(ignore: true)
-  _$$_RestaurantCopyWith<_$_Restaurant> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
 }
 
 Attributes _$AttributesFromJson(Map<String, dynamic> json) {
@@ -385,7 +377,7 @@ mixin _$Attributes {
   DateTime get updatedAt => throw _privateConstructorUsedError;
   DateTime get publishedAt => throw _privateConstructorUsedError;
   String? get photo => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -409,7 +401,7 @@ abstract class $AttributesCopyWith<$Res> {
       DateTime updatedAt,
       DateTime publishedAt,
       String? photo,
-      String userId});
+      String? userId});
 }
 
 /// @nodoc
@@ -434,7 +426,7 @@ class _$AttributesCopyWithImpl<$Res, $Val extends Attributes>
     Object? updatedAt = null,
     Object? publishedAt = null,
     Object? photo = freezed,
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -473,10 +465,10 @@ class _$AttributesCopyWithImpl<$Res, $Val extends Attributes>
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -499,7 +491,7 @@ abstract class _$$_AttributesCopyWith<$Res>
       DateTime updatedAt,
       DateTime publishedAt,
       String? photo,
-      String userId});
+      String? userId});
 }
 
 /// @nodoc
@@ -522,7 +514,7 @@ class __$$_AttributesCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? publishedAt = null,
     Object? photo = freezed,
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_$_Attributes(
       name: null == name
@@ -561,10 +553,10 @@ class __$$_AttributesCopyWithImpl<$Res>
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -582,7 +574,7 @@ class _$_Attributes implements _Attributes {
       required this.updatedAt,
       required this.publishedAt,
       this.photo,
-      required this.userId});
+      this.userId});
 
   factory _$_Attributes.fromJson(Map<String, dynamic> json) =>
       _$$_AttributesFromJson(json);
@@ -606,7 +598,7 @@ class _$_Attributes implements _Attributes {
   @override
   final String? photo;
   @override
-  final String userId;
+  final String? userId;
 
   @override
   String toString() {
@@ -666,7 +658,7 @@ abstract class _Attributes implements Attributes {
       required final DateTime updatedAt,
       required final DateTime publishedAt,
       final String? photo,
-      required final String userId}) = _$_Attributes;
+      final String? userId}) = _$_Attributes;
 
   factory _Attributes.fromJson(Map<String, dynamic> json) =
       _$_Attributes.fromJson;
@@ -690,7 +682,7 @@ abstract class _Attributes implements Attributes {
   @override
   String? get photo;
   @override
-  String get userId;
+  String? get userId;
   @override
   @JsonKey(ignore: true)
   _$$_AttributesCopyWith<_$_Attributes> get copyWith =>

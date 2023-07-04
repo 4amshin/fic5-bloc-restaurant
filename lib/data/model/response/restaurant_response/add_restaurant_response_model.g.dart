@@ -44,7 +44,7 @@ _$_Attributes _$$_AttributesFromJson(Map<String, dynamic> json) =>
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       publishedAt: DateTime.parse(json['publishedAt'] as String),
-      photo: json['photo'] as String,
+      photo: json['photo'] as String?,
       userId: json['userId'] as String,
     );
 

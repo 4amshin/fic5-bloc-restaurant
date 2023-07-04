@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:camera/camera.dart';
 import 'package:fic5_bloc_restaurant/data/data_sources/remote_data_sources/restaurant_data_sources.dart';
 import 'package:fic5_bloc_restaurant/data/model/request/restaurant_request/add_restaurant_request_model.dart';
 import 'package:fic5_bloc_restaurant/data/model/response/restaurant_response/add_restaurant_response_model.dart';
@@ -19,11 +22,22 @@ class AddRestaurantBloc extends Bloc<AddRestaurantEvent, AddRestaurantState> {
     Emitter<AddRestaurantState> emit,
   ) async {
     emit(const _Loading());
-    final result =
-        await dataSources.addRestaurant(restaurantData: event.restaurantModel);
-    result.fold(
+    final uploadResult = await dataSources.uploadImage(event.image);
+    uploadResult.fold(
       (error) => emit(_Error(message: error)),
-      (data) => emit(_Loaded(model: data)),
+      (dataUpload) async {
+        final image = dataUpload.formats.medium.url;
+        log(image.toString());
+        final updatedRestaurantModel = event.restaurantModel.copyWith(
+          data: event.restaurantModel.data.copyWith(photo: image),
+        );
+        final result = await dataSources.addRestaurant(
+            restaurantData: updatedRestaurantModel);
+        result.fold(
+          (error) => emit(_Error(message: error)),
+          (data) => emit(_Loaded(model: data)),
+        );
+      },
     );
   }
 }

@@ -33,7 +33,10 @@ class _DetailViewState extends State<DetailView> {
           return state.maybeWhen(
             loading: () => const Center(child: CircularProgressIndicator()),
             loaded: (model) {
-              return DvBody(model: model);
+              return DvBody(
+                model: model,
+                restaurantId: widget.restaurantId,
+              );
             },
             orElse: () => const Center(
               child: Text("No Data"),

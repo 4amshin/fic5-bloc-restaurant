@@ -1,36 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'restaurant_response_model.dart';
+part of 'delete_restaurant_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RestaurantResponseModel _$$_RestaurantResponseModelFromJson(
+_$_DeleteRestaurantResponseModel _$$_DeleteRestaurantResponseModelFromJson(
         Map<String, dynamic> json) =>
-    _$_RestaurantResponseModel(
-      data: (json['data'] as List<dynamic>)
-          .map((e) => Restaurant.fromJson(e as Map<String, dynamic>))
-          .toList(),
+    _$_DeleteRestaurantResponseModel(
+      data: Data.fromJson(json['data'] as Map<String, dynamic>),
       meta: Meta.fromJson(json['meta'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_RestaurantResponseModelToJson(
-        _$_RestaurantResponseModel instance) =>
+Map<String, dynamic> _$$_DeleteRestaurantResponseModelToJson(
+        _$_DeleteRestaurantResponseModel instance) =>
     <String, dynamic>{
       'data': instance.data,
       'meta': instance.meta,
     };
 
-_$_Restaurant _$$_RestaurantFromJson(Map<String, dynamic> json) =>
-    _$_Restaurant(
+_$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
       id: json['id'] as int,
       attributes:
           Attributes.fromJson(json['attributes'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_RestaurantToJson(_$_Restaurant instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{
       'id': instance.id,
       'attributes': instance.attributes,
     };
@@ -63,27 +59,6 @@ Map<String, dynamic> _$$_AttributesToJson(_$_Attributes instance) =>
       'userId': instance.userId,
     };
 
-_$_Meta _$$_MetaFromJson(Map<String, dynamic> json) => _$_Meta(
-      pagination:
-          Pagination.fromJson(json['pagination'] as Map<String, dynamic>),
-    );
+_$_Meta _$$_MetaFromJson(Map<String, dynamic> json) => _$_Meta();
 
-Map<String, dynamic> _$$_MetaToJson(_$_Meta instance) => <String, dynamic>{
-      'pagination': instance.pagination,
-    };
-
-_$_Pagination _$$_PaginationFromJson(Map<String, dynamic> json) =>
-    _$_Pagination(
-      page: json['page'] as int,
-      pageSize: json['pageSize'] as int,
-      pageCount: json['pageCount'] as int,
-      total: json['total'] as int,
-    );
-
-Map<String, dynamic> _$$_PaginationToJson(_$_Pagination instance) =>
-    <String, dynamic>{
-      'page': instance.page,
-      'pageSize': instance.pageSize,
-      'pageCount': instance.pageCount,
-      'total': instance.total,
-    };
+Map<String, dynamic> _$$_MetaToJson(_$_Meta instance) => <String, dynamic>{};

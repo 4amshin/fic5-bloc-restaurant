@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:fic5_bloc_restaurant/shared/theme/google_map/gmaap_marker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -19,11 +20,14 @@ class DvMapFullView extends StatefulWidget {
 }
 
 class _DvMapFullViewState extends State<DvMapFullView> {
-  late GoogleMapController mapController;
-  // final LatLng _center = const LatLng(-3.0068907878258972, 120.20167831747938);
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
+  @override
+  void initState() {
+    createMarker(
+      double.parse(widget.latitude),
+      double.parse(widget.longitude),
+      widget.title,
+    );
+    super.initState();
   }
 
   @override
@@ -34,7 +38,8 @@ class _DvMapFullViewState extends State<DvMapFullView> {
         title: Text(widget.title),
       ),
       body: GoogleMap(
-        onMapCreated: _onMapCreated,
+        mapType: MapType.normal,
+        markers: markers,
         initialCameraPosition: CameraPosition(
           target: LatLng(
             double.parse(widget.latitude),

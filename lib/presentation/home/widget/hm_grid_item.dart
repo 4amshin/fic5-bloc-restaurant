@@ -1,24 +1,26 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class HmGridItem extends StatelessWidget {
-  final String imgUrl;
+  final String? imgUrl;
   final String name;
   final String address;
   const HmGridItem({
     Key? key,
-    required this.imgUrl,
+    this.imgUrl,
     required this.name,
     required this.address,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final imageUrl = imgUrl?.isNotEmpty == true
+        ? imgUrl
+        : 'https://tinyurl.com/logo-default1';
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(imgUrl),
+          image: NetworkImage(imageUrl!),
           fit: BoxFit.cover,
         ),
         color: Colors.orange,

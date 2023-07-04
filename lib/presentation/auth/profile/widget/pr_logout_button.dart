@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:fic5_bloc_restaurant/data/data_sources/local_data_sources/auth_local_data_sources.dart';
-import 'package:fic5_bloc_restaurant/presentation/auth/login/view/login_view.dart';
+import 'package:fic5_bloc_restaurant/presentation/main_navigation/view/main_navigation_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,8 +19,9 @@ class PrLogoutButton extends StatelessWidget {
           await AuthLocalDataSources().removeToken();
           log("Removing Login Token in Local Storage");
           //navigate to login page
-          log("Navigate To Login Page");
-          context.go(LoginView.routeName);
+          log("Navigate To Reguler Home View");
+
+          context.go(MainNavigationView.routeName);
         },
         icon: const Icon(Icons.logout),
         iconSize: 20,

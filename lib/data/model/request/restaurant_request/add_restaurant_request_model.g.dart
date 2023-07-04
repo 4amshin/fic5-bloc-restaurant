@@ -23,7 +23,7 @@ _$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
       description: json['description'] as String,
       latitude: json['latitude'] as String,
       longitude: json['longitude'] as String,
-      photo: json['photo'] as String,
+      photo: json['photo'] as String?,
       address: json['address'] as String,
       userId: json['userId'] as int,
     );

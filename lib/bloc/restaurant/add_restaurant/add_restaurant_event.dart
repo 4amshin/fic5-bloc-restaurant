@@ -5,5 +5,6 @@ class AddRestaurantEvent with _$AddRestaurantEvent {
   const factory AddRestaurantEvent.started() = _Started;
   const factory AddRestaurantEvent.addRestaurant({
     required AddRestaurantRequestModel restaurantModel,
+    required XFile image,
   }) = _AddRestaurant;
 }

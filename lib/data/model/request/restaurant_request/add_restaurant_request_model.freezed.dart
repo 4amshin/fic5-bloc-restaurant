@@ -180,7 +180,7 @@ mixin _$Data {
   String get description => throw _privateConstructorUsedError;
   String get latitude => throw _privateConstructorUsedError;
   String get longitude => throw _privateConstructorUsedError;
-  String get photo => throw _privateConstructorUsedError;
+  String? get photo => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
   int get userId => throw _privateConstructorUsedError;
 
@@ -199,7 +199,7 @@ abstract class $DataCopyWith<$Res> {
       String description,
       String latitude,
       String longitude,
-      String photo,
+      String? photo,
       String address,
       int userId});
 }
@@ -221,7 +221,7 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
     Object? description = null,
     Object? latitude = null,
     Object? longitude = null,
-    Object? photo = null,
+    Object? photo = freezed,
     Object? address = null,
     Object? userId = null,
   }) {
@@ -242,10 +242,10 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: null == photo
+      photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -269,7 +269,7 @@ abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
       String description,
       String latitude,
       String longitude,
-      String photo,
+      String? photo,
       String address,
       int userId});
 }
@@ -287,7 +287,7 @@ class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
     Object? description = null,
     Object? latitude = null,
     Object? longitude = null,
-    Object? photo = null,
+    Object? photo = freezed,
     Object? address = null,
     Object? userId = null,
   }) {
@@ -308,10 +308,10 @@ class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: null == photo
+      photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -332,7 +332,7 @@ class _$_Data implements _Data {
       required this.description,
       required this.latitude,
       required this.longitude,
-      required this.photo,
+      this.photo,
       required this.address,
       required this.userId});
 
@@ -347,7 +347,7 @@ class _$_Data implements _Data {
   @override
   final String longitude;
   @override
-  final String photo;
+  final String? photo;
   @override
   final String address;
   @override
@@ -400,7 +400,7 @@ abstract class _Data implements Data {
       required final String description,
       required final String latitude,
       required final String longitude,
-      required final String photo,
+      final String? photo,
       required final String address,
       required final int userId}) = _$_Data;
 
@@ -415,7 +415,7 @@ abstract class _Data implements Data {
   @override
   String get longitude;
   @override
-  String get photo;
+  String? get photo;
   @override
   String get address;
   @override
